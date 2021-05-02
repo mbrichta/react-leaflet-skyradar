@@ -1,47 +1,32 @@
 import { Icon } from 'leaflet';
+import { useContext } from 'react';
 import { Marker, Popup } from "react-leaflet";
+import { Context } from '../context';
+import { PopupContent } from './PopupContent';
 
 const planeIcon = new Icon({
     iconUrl: '/icons/plane.svg',
-    iconSize: [15, 15]
+    iconSize: [15, 15],
+    className: "planeMarker"
 })
 
 export const PlaneMarker = ({ plane }) => {
 
-    const [
-        icao24,
-        callsign,
-        origin_country,
-        time_position,
-        last_contact,
-        longitude,
-        latitude,
-        baro_altitude,
-        on_ground,
-        velocity,
-        true_track,
-        vertical_rate,
-        sensors,
-        geo_altitude,
-        squawk,
-        spi,
-        position_source
-    ] = plane;
+    const icao24 = plane[0];
+    const longitude = plane[5];
+    const latitude = plane[6];
+    const { selectedPlane, setSelectedPlane } = useContext(Context);
 
-    const renderPopupHtml = () => (
-        <div>
-            <h3>Identification:</h3>
-            <p>{icao24}</p>
-            {callsign ? <p>{callsign}</p> : null}
-            <h3>Location:</h3>
-            <p>{origin_country}</p>
-            {time_position ? <p>{Date(time_position)}</p> : null}
-        </div>
-    )
-
+    const eventHandlerObj = {
+        click: () => {
+            if (selectedPlane) {
+                setSelectedPlane(plane)
+            }
+        },
+    }
     return (
-        <Marker position={[latitude, longitude]} icon={planeIcon}>
-            <Popup>{renderPopupHtml()}</Popup>
+        <Marker position={[latitude, longitude]} icon={planeIcon} eventHandlers={eventHandlerObj}>
+            <Popup><PopupContent plane={plane} /></Popup>
         </Marker>
     )
 }

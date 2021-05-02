@@ -4,9 +4,10 @@ const Context = createContext();
 
 const ContextProvider = ({ children }) => {
     const [planes, setPlanes] = useState([])
+    const [selectedPlane, setSelectedPlane] = useState();
 
     return (
-        <Context.Provider value={{ planes, setPlanes }} >
+        <Context.Provider value={{ planes, setPlanes, selectedPlane, setSelectedPlane }} >
             {children}
         </Context.Provider>
     )
