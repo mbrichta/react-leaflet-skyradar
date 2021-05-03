@@ -46,7 +46,7 @@ const Home = () => {
                 center={position}
                 zoom={7}
                 scrollWheelZoom={true}
-                style={{ height: "100%" }}
+                style={{ height: "94%" }}
                 minZoom={4}
             >
                 <TileLayer
