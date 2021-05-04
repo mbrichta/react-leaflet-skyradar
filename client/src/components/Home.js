@@ -1,5 +1,5 @@
 import { Box, makeStyles, Typography, useTheme } from '@material-ui/core';
-import { useContext, useState } from 'react';
+import { useContext } from 'react';
 import { MapContainer, TileLayer } from "react-leaflet";
 import { Context } from '../context';
 import { EventListenerComponent } from './EventListenerComponent';
@@ -15,7 +15,7 @@ const Home = () => {
 
     const useStyles = makeStyles({
         nav: {
-            backgroundColor: theme.colors.primary,
+            backgroundColor: theme.palette.primary.light,
             height: "6%",
             display: "flex",
             justifyContent: "center",

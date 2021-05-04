@@ -4,7 +4,6 @@ import { Context } from "../context";
 
 export const PopupContent = ({ plane }) => {
 
-    const theme = useTheme();
     const useStyles = makeStyles({
         root: {
             justifyContent: "center",
