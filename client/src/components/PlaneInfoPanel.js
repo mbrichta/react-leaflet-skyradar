@@ -30,10 +30,8 @@ const PlaneInfoPanel = ({ plane }) => {
     const theme = useTheme();
     const useStyles = makeStyles({
         root: {
-            position: "fixed",
             display: 'flex',
             flexDirection: 'column',
-            height: '94%',
             bottom: 0,
             right: 0,
             zIndex: "5000",
@@ -52,7 +50,9 @@ const PlaneInfoPanel = ({ plane }) => {
         <Box
             className={classes.root}
             boxShadow={3}
-            width={{ xs: "100%", sm: "70%", md: "45%", lg: "25%" }}
+            width={{ xs: "100%", sm: "60%", md: "45%", lg: "35%" }}
+            height={{ xs: "50%", sm: "94%", md: "94%", lg: "94%" }}
+            position={{ md: "fixed" }}
         >
             <CloseIconBox />
             <FlightDepartureBox originCountry={origin_country} />

@@ -19,7 +19,7 @@ export const EventListenerComponent = () => {
 
         const i = setInterval(getPlaneData, 5000);
         setUpdateInterval(i)
-    });
+    }, []);
 
     useEffect(() => {
         return () => clearInterval(updateInterval)
