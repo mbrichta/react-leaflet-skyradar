@@ -10,7 +10,7 @@ export const FlightDataBox = ({ velocity, verticalRate, geoAltitude, baroAltitud
 
     const useStyles = makeStyles({
         flightData: {
-            padding: '75px 50px 50px 50px',
+            padding: '75px 30px 30px 30px',
             backgroundColor: '#e4f1f7',
             width: '100%',
             display: 'flex',
@@ -44,7 +44,7 @@ export const FlightDataBox = ({ velocity, verticalRate, geoAltitude, baroAltitud
                 {
                     velocity ?
                         <Typography
-                            variant="h4"
+                            variant="h6"
                             className={classes.infoItem}
                         >
                             {toggleSpeed ?
@@ -53,7 +53,7 @@ export const FlightDataBox = ({ velocity, verticalRate, geoAltitude, baroAltitud
                             }
                         </Typography> :
                         <Typography
-                            variant="h4"
+                            variant="h6"
                             className={classes.infoItem}
                         >
                             No Data
@@ -72,7 +72,7 @@ export const FlightDataBox = ({ velocity, verticalRate, geoAltitude, baroAltitud
                 {
                     verticalRate ?
                         <Typography
-                            variant="h4"
+                            variant="h6"
                             className={classes.infoItem}
                         >
                             {toggleVerticalRate ?
@@ -81,7 +81,7 @@ export const FlightDataBox = ({ velocity, verticalRate, geoAltitude, baroAltitud
                             }
                         </Typography> :
                         <Typography
-                            variant="h4"
+                            variant="h6"
                             className={classes.infoItem}
                         >
                             No Data
@@ -100,7 +100,7 @@ export const FlightDataBox = ({ velocity, verticalRate, geoAltitude, baroAltitud
                 {
                     baroAltitude ?
                         <Typography
-                            variant="h4"
+                            variant="h6"
                             className={classes.infoItem}
                         >
                             {toggleBaroAltitude ?
@@ -109,7 +109,7 @@ export const FlightDataBox = ({ velocity, verticalRate, geoAltitude, baroAltitud
                             }
                         </Typography> :
                         <Typography
-                            variant="h4"
+                            variant="h6"
                             className={classes.infoItem}
                         >
                             No Data
@@ -128,7 +128,7 @@ export const FlightDataBox = ({ velocity, verticalRate, geoAltitude, baroAltitud
                 {
                     geoAltitude ?
                         <Typography
-                            variant="h4"
+                            variant="h6"
                             className={classes.infoItem}
                         >
                             {toggleGeoAltitude ?
@@ -137,7 +137,7 @@ export const FlightDataBox = ({ velocity, verticalRate, geoAltitude, baroAltitud
                             }
                         </Typography> :
                         <Typography
-                            variant="h4"
+                            variant="h6"
                             className={classes.infoItem}
                         >
                             No Data
@@ -149,12 +149,12 @@ export const FlightDataBox = ({ velocity, verticalRate, geoAltitude, baroAltitud
                 {
                     latitude ?
                         <Typography
-                            variant="h4"
+                            variant="h6"
                             className={classes.infoItem}>
                             {latitude}
                         </Typography> :
                         <Typography
-                            variant="h4"
+                            variant="h6"
                             className={classes.infoItem}
                         >
                             No Data
@@ -166,12 +166,12 @@ export const FlightDataBox = ({ velocity, verticalRate, geoAltitude, baroAltitud
                 {
                     longitude ?
                         <Typography
-                            variant="h4"
+                            variant="h6"
                             className={classes.infoItem}>
                             {longitude}
                         </Typography> :
                         <Typography
-                            variant="h4"
+                            variant="h6"
                             className={classes.infoItem}
                         >
                             No Data

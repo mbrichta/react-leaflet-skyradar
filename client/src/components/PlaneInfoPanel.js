@@ -37,7 +37,8 @@ const PlaneInfoPanel = ({ plane }) => {
             zIndex: "5000",
             backgroundColor: theme.palette.text.primary,
             color: theme.palette.text.secondary,
-            borderRadius: 5
+            borderRadius: 5,
+            position: 'fixed',
         },
     });
     const classes = useStyles();
@@ -51,8 +52,8 @@ const PlaneInfoPanel = ({ plane }) => {
             className={classes.root}
             boxShadow={3}
             width={{ xs: "100%", sm: "60%", md: "45%", lg: "35%" }}
-            height={{ xs: "50%", sm: "94%", md: "94%", lg: "94%" }}
-            position={{ md: "fixed" }}
+            maxHeight={{ xs: "80%", sm: "auto" }}
+            position="fixed"
         >
             <CloseIconBox />
             <FlightDepartureBox originCountry={origin_country} />

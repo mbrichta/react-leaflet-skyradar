@@ -9,13 +9,19 @@ export const FlightInfoCard = ({ timePosition, icao, callsign, onGround }) => {
     const theme = useTheme();
     const useStyles = makeStyles({
         flightInfoWrapper: {
+            display: 'flex',
+            flexDirection: 'column',
             backgroundColor: theme.palette.primary.light,
-            padding: "5px",
             borderRadius: 10,
             marginLeft: -45,
             color: theme.palette.text.primary,
-            width: '80%',
-            position: 'relative'
+            maxWidth: 'max-content',
+            height: 'auto',
+            zIndex: 6000,
+            padding: '10px 15px',
+            [theme.breakpoints.down('sm')]: {
+                marginLeft: 15,
+            }
         },
         flightInfoRow: {
             display: 'flex',
@@ -46,34 +52,34 @@ export const FlightInfoCard = ({ timePosition, icao, callsign, onGround }) => {
 
     return (
         <Card className={classes.flightInfoWrapper}>
-            <CardContent>
+            <Box>
                 <Typography variant="h5">Flight information:</Typography>
-                <Box className={classes.flightInfoRow}>
-                    <Box className={classes.flightInfoCol}>
-                        <Typography className={classes.smallText} >Date:</Typography>
-                        <Typography>{day} {month}</Typography>
-                    </Box>
-                    <Box className={classes.flightInfoCol}>
-                        <Typography className={classes.smallText}>Icao:</Typography>
-                        <Typography>{icao}</Typography>
-                    </Box>
-                    <Box className={classes.flightInfoCol}>
-                        <Typography className={classes.smallText}>Callsign:</Typography>
-                        {
-                            callsign ?
-                                <Typography>{callsign}</Typography> :
-                                <Typography>No callsign found</Typography>
-                        }
-                    </Box>
-                    <Box display="flex" flexDirection="column" justifyContent="center">
-                        {
-                            onGround ?
-                                <Typography className={classes.onGroundText}>On Ground</Typography> :
-                                <Typography className={classes.onAirText}>On Air</Typography>
-                        }
-                    </Box>
+            </Box>
+            <Box className={classes.flightInfoRow}>
+                <Box className={classes.flightInfoCol}>
+                    <Typography className={classes.smallText} >Date:</Typography>
+                    <Typography>{day} {month}</Typography>
                 </Box>
-            </CardContent>
+                <Box className={classes.flightInfoCol}>
+                    <Typography className={classes.smallText}>Icao:</Typography>
+                    <Typography>{icao}</Typography>
+                </Box>
+                <Box className={classes.flightInfoCol}>
+                    <Typography className={classes.smallText}>Callsign:</Typography>
+                    {
+                        callsign ?
+                            <Typography>{callsign}</Typography> :
+                            <Typography>No callsign found</Typography>
+                    }
+                </Box>
+                <Box display="flex" flexDirection="column" justifyContent="center">
+                    {
+                        onGround ?
+                            <Typography className={classes.onGroundText}>On Ground</Typography> :
+                            <Typography className={classes.onAirText}>On Air</Typography>
+                    }
+                </Box>
+            </Box>
         </Card>
     )
 }

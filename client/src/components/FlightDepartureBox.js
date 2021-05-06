@@ -8,7 +8,7 @@ export const FlightDepartureBox = ({ originCountry }) => {
             fontWeight: 500
         },
         flightTitle: {
-            padding: '20px 15px',
+            padding: '10px 5px 5px 10px',
             color: 'black',
             opacity: 0.7
         },
