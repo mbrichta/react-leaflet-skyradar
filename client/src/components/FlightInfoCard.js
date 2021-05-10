@@ -1,4 +1,4 @@
-import { useTheme, makeStyles, Card, CardContent, Box, Typography } from '@material-ui/core';
+import { useTheme, makeStyles, Card, Box, Typography } from '@material-ui/core';
 
 export const FlightInfoCard = ({ timePosition, icao, callsign, onGround }) => {
 
@@ -16,16 +16,23 @@ export const FlightInfoCard = ({ timePosition, icao, callsign, onGround }) => {
             marginLeft: -45,
             color: theme.palette.text.primary,
             maxWidth: 'max-content',
-            height: 'auto',
             zIndex: 6000,
             padding: '10px 15px',
             [theme.breakpoints.down('sm')]: {
-                marginLeft: 15,
+                marginLeft: 10,
+                minHeight: 140
+            },
+            [theme.breakpoints.up('md')]: {
+                marginLeft: 10,
+                minHeight: 130
             }
+        },
+        titleWrapper: {
+            display: 'flex'
         },
         flightInfoRow: {
             display: 'flex',
-            marginTop: 10
+            marginTop: 10,
         },
         flightInfoCol: {
             padding: "5px 15px 5px 0",
@@ -52,7 +59,7 @@ export const FlightInfoCard = ({ timePosition, icao, callsign, onGround }) => {
 
     return (
         <Card className={classes.flightInfoWrapper}>
-            <Box>
+            <Box className={classes.titleWrapper}>
                 <Typography variant="h5">Flight information:</Typography>
             </Box>
             <Box className={classes.flightInfoRow}>

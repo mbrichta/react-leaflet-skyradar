@@ -39,6 +39,9 @@ const PlaneInfoPanel = ({ plane }) => {
             color: theme.palette.text.secondary,
             borderRadius: 5,
             position: 'fixed',
+            [theme.breakpoints.down('lg')]: {
+                overflow: 'scroll'
+            }
         },
     });
     const classes = useStyles();
@@ -52,7 +55,7 @@ const PlaneInfoPanel = ({ plane }) => {
             className={classes.root}
             boxShadow={3}
             width={{ xs: "100%", sm: "60%", md: "45%", lg: "35%" }}
-            maxHeight={{ xs: "80%", sm: "auto" }}
+            maxHeight={{ xs: "65%", sm: "auto" }}
             position="fixed"
         >
             <CloseIconBox />
